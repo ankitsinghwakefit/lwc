@@ -1,0 +1,43 @@
+<template>
+    <lightning-card>
+      <div slot="title">
+          Card Title
+      </div>
+      <div>
+        <lightning-combobox
+            name="status"
+            label="choose Account type"
+            placeholder="Choose Account type"
+            onchange={handleChange}
+            options={statusOptions}
+        >
+        </lightning-combobox>
+        <p>Selected option: {selectedActType}</p>
+</div>
+      <div slot="footer">
+    <lightning-button 
+      variant="brand"
+      label="select account type" 
+      onclick={handleClick} 
+    ></lightning-button>
+    <lightning-button 
+      variant="brand"
+      label="make another api call" 
+      onclick={handleImperativeClick} 
+    ></lightning-button>
+      </div>
+    </lightning-card>
+    <lightning-card>
+        <template for:each={userAccounts} for:item="account">
+            <div key={account.Id} class="slds-p-around_medium">
+                <p>{account.Name}</p>
+                <p>{account.Type}</p>
+                <lightning-button 
+                  variant="brand"
+                  label="click for information" 
+                  onclick={handleClick} 
+                ></lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>

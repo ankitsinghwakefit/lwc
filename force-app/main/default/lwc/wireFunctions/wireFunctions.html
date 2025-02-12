@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="standard:account" variant="base">
+      <div slot="title">
+          {userId}
+      </div>
+
+      <lightning-combobox
+        name="status"
+        label="Status"
+        placeholder="Choose Status"
+        value={value}
+        onchange={handleChange}
+        options={statusOptions}
+    >
+    </lightning-combobox>
+
+      <!-- <template if:true={objectInfo.data}>
+        <h1>{objectInfo.data.defaultRecordTypeId}</h1>
+        <h1>123</h1>
+      </template> -->
+    </lightning-card>
+</template>
