@@ -1,0 +1,7 @@
+<template>
+    <lightning-card  title={todoData.title}>
+        <lightning-button label="Edit" onclick={editTodo} slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">{todoData.description}</p>
+        <p slot="footer">{todoData.createdOn}</p>
+    </lightning-card>
+</template>

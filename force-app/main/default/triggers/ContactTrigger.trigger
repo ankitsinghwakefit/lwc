@@ -58,16 +58,16 @@ trigger ContactTrigger on Contact (after insert, after update, after delete) {
             for(Contact con : Trigger.new){
                 system.debug(con);
                 /*if(!String.isBlank(con.AccountId) && con.Active__c == true){
-String actId = con.AccountId;
-List<Contact> ac = [SELECT Id, AccountId, Active__c FROM Contact WHERE Active__c = true AND AccountId = :actId];
-system.debug(ac);
-Decimal activeCount = ac.size();
-acts.add(new Account(Id=actId, Active_Contacts__c = activeCount));
-if(acts.size()>0){
-system.debug(acts);
-update acts;
-}
-}*/
+                    String actId = con.AccountId;
+                    List<Contact> ac = [SELECT Id, AccountId, Active__c FROM Contact WHERE Active__c = true AND AccountId = :actId];
+                    system.debug(ac);
+                    Decimal activeCount = ac.size();
+                    acts.add(new Account(Id=actId, Active_Contacts__c = activeCount));
+                    if(acts.size()>0){
+                    system.debug(acts);
+                    update acts;
+                    }
+                    }*/
             }
             
         }
